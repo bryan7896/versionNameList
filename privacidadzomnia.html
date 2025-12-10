@@ -4,83 +4,422 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Privacy Policy - ZomnIA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
+        :root {
+            --primary-color: #6d5dfc;
+            --primary-dark: #5a4bdf;
+            --secondary-color: #8b7eff;
+            --accent-color: #ff6b8b;
+            --light-color: #f8f9fe;
+            --dark-color: #2d2b55;
+            --gray-light: #e9ecef;
+            --gray-medium: #adb5bd;
+            --gray-dark: #495057;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
             padding: 0;
-            max-width: 800px;
+            box-sizing: border-box;
         }
-        h1, h2 {
-            color: #333;
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f9f9ff;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(109, 93, 252, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 85% 30%, rgba(255, 107, 139, 0.05) 0%, transparent 20%);
+            padding: 20px;
+            min-height: 100vh;
         }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-icon {
+            font-size: 2.2rem;
+            margin-right: 15px;
+            filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2));
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .intro {
+            background-color: var(--light-color);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-bottom: 35px;
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            margin: 0;
+        }
+
+        .policy-section {
+            margin-bottom: 35px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--gray-light);
+            transition: var(--transition);
+        }
+
+        .policy-section:hover {
+            transform: translateY(-2px);
+        }
+
+        .policy-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        h2 {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(109, 93, 252, 0.1);
+        }
+
+        h2 i {
+            margin-right: 12px;
+            background-color: rgba(109, 93, 252, 0.1);
+            width: 40px;
+            height: 40px;
+            text-align: center !important;
+            align-content: center !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: var(--primary-color);
+        }
+
         p {
             margin-bottom: 18px;
+            color: var(--gray-dark);
+            font-size: 1.05rem;
+        }
+
+        .highlight {
+            background-color: rgba(255, 107, 139, 0.08);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #f8f9fe, #e9ecef);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin-top: 40px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--gray-light);
+        }
+
+        .contact-box h2 {
+            justify-content: center;
+            border-bottom: none;
+            color: var(--dark-color);
+        }
+
+        .contact-box p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .email-link {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(109, 93, 252, 0.3);
+        }
+
+        .email-link:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(109, 93, 252, 0.4);
+        }
+
+        .email-link i {
+            margin-right: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: var(--gray-medium);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--gray-light);
+            margin-top: 30px;
+        }
+
+        .policy-date {
+            display: inline-block;
+            background-color: var(--light-color);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            color: var(--gray-dark);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
+            header {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .intro {
+                padding: 20px;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+            }
+            
+            .contact-box {
+                padding: 25px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .logo-icon {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+            }
+            
+            h2 i {
+                width: 35px;
+                height: 35px;
+                margin-right: 10px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-moon logo-icon"></i>
+                <h1>Privacy Policy</h1>
+            </div>
+            <p class="subtitle">Your privacy matters. Learn how ZomnIA protects your data and respects your anonymity.</p>
+        </header>
+        
+        <div class="content">
+            <div class="intro">
+                <p>At ZomnIA, we value your privacy. This policy explains what information we collect, how we use it, and how we protect it. ZomnIA is designed to operate without collecting personally identifiable data.</p>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-info-circle"></i> 1. Information We Collect</h2>
+                <p>The app does not request your name, email, or any personal data. The only content processed is the dream text you write or the audio you narrate. This information is used exclusively to generate interpretations through AI and is not stored on our servers.</p>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-user-secret"></i> 2. Anonymous Dream Posting</h2>
+                <p>The community inside ZomnIA is completely anonymous. No one can identify who posted a dream. All posts are automatically moderated to prevent harmful or offensive content before appearing publicly.</p>
+                <div class="highlight">
+                    <p><strong>Note:</strong> Your dreams are shared without any connection to your identity, device, or personal information.</p>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-key"></i> 3. App Permissions</h2>
+                <p>ZomnIA only requests minimal permissions: microphone access to narrate dreams, and notification permission to send optional updates. We do not use camera, contacts, location, or any other additional permissions.</p>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-microphone"></i> 4. Handling of Audio and Text</h2>
+                <p>When you narrate a dream, the app temporarily converts the audio to text. We do not store recordings or texts in permanent databases. Nothing is linked to identities, devices, or accounts.</p>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-ad"></i> 5. Advertising and Premium Mode</h2>
+                <p>ZomnIA uses ads to remain free. These ads may use anonymous device identifiers. You can activate premium mode to remove ads. No additional purchases or donations are available.</p>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-shield-alt"></i> 6. Security</h2>
+                <p>We do not store sensitive data or private information. ZomnIA is designed to operate without user accounts or personal databases.</p>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-sync-alt"></i> 7. Changes to This Policy</h2>
+                <p>We may update this policy to reflect improvements or legal requirements. The latest version will always be available inside the app.</p>
+            </div>
+            
+            <div class="contact-box">
+                <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+                <p>If you need assistance or have questions about our privacy policy, feel free to reach out to us:</p>
+                <a href="mailto:barakforge@gmail.com" class="email-link">
+                    <i class="fas fa-paper-plane"></i> barakforge@gmail.com
+                </a>
+            </div>
+            
+            <footer>
+                <p>ZomnIA &copy; <span id="current-year"></span>. All rights reserved.</p>
+                <div class="policy-date">Last updated: Dic 2025</div>
+            </footer>
+        </div>
+    </div>
 
-    <h1>Privacy Policy</h1>
-
-    <p>
-        At ZomnIA, we value your privacy. This policy explains what information we collect, 
-        how we use it, and how we protect it. ZomnIA is designed to operate without collecting 
-        personally identifiable data.
-    </p>
-
-    <h2>1. Information We Collect</h2>
-    <p>
-        The app does not request your name, email, or any personal data. The only content processed 
-        is the dream text you write or the audio you narrate. This information is used exclusively 
-        to generate interpretations through AI and is not stored on our servers.
-    </p>
-
-    <h2>2. Anonymous Dream Posting</h2>
-    <p>
-        The community inside ZomnIA is completely anonymous. No one can identify who posted a dream. 
-        All posts are automatically moderated to prevent harmful or offensive content before appearing 
-        publicly.
-    </p>
-
-    <h2>3. App Permissions</h2>
-    <p>
-        ZomnIA only requests minimal permissions: microphone access to narrate dreams, and 
-        notification permission to send optional updates. We do not use camera, contacts, 
-        location, or any other additional permissions.
-    </p>
-
-    <h2>4. Handling of Audio and Text</h2>
-    <p>
-        When you narrate a dream, the app temporarily converts the audio to text. We do not store 
-        recordings or texts in permanent databases. Nothing is linked to identities, devices, 
-        or accounts.
-    </p>
-
-    <h2>5. Advertising and Premium Mode</h2>
-    <p>
-        ZomnIA uses ads to remain free. These ads may use anonymous device identifiers. You can 
-        activate premium mode to remove ads. No additional purchases or donations are available.
-    </p>
-
-    <h2>6. Security</h2>
-    <p>
-        We do not store sensitive data or private information. ZomnIA is designed to operate 
-        without user accounts or personal databases.
-    </p>
-
-    <h2>7. Changes to This Policy</h2>
-    <p>
-        We may update this policy to reflect improvements or legal requirements. The latest 
-        version will always be available inside the app.
-    </p>
-
-    <h2>Contact</h2>
-    <p>
-        If you need assistance or have questions, contact us at: 
-        <strong>barakforge@gmail.com</strong>
-    </p>
-
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Smooth scroll for anchor links (if any added in the future)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add subtle animation to policy sections on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Apply initial styles for animation
+        document.querySelectorAll('.policy-section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
