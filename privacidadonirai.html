@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy - OnirAI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary-color: #8b5cf6;
+            --accent-color: #06b6d4;
+            --light-color: #f5f3ff;
+            --dark-color: #1e1b4b;
+            --gray-light: #e2e8f0;
+            --gray-medium: #94a3b8;
+            --gray-dark: #334155;
+            --shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            --border-radius: 24px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --gradient-start: #6366f1;
+            --gradient-end: #8b5cf6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-color);
+            background: linear-gradient(135deg, #faf9ff 0%, #f1f0ff 100%);
+            padding: 30px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end), var(--accent-color));
+            z-index: 10;
+        }
+
+        header {
+            background: linear-gradient(145deg, rgba(99, 102, 241, 0.95), rgba(79, 70, 229, 0.98)), 
+                        url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><path d="M30 5L55 30L30 55L5 30L30 5Z" fill="rgba(255,255,255,0.03)"/></svg>');
+            background-size: 40px 40px;
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s infinite;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 15s infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -20px) rotate(5deg); }
+            66% { transform: translate(-20px, 30px) rotate(-5deg); }
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-icon {
+            font-size: 3rem;
+            margin-right: 15px;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+            letter-spacing: -0.5px;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            font-weight: 400;
+            line-height: 1.6;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .content {
+            padding: 50px 45px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .intro {
+            background: linear-gradient(145deg, var(--light-color), white);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 45px;
+            border: 1px solid rgba(99, 102, 241, 0.1);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.08);
+            position: relative;
+        }
+
+        .intro::before {
+            content: '🌙';
+            position: absolute;
+            top: -15px;
+            left: 30px;
+            font-size: 30px;
+            background: white;
+            padding: 0 15px;
+            border-radius: 50px;
+        }
+
+        .intro p {
+            font-size: 1.15rem;
+            color: var(--dark-color);
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .policy-section {
+            margin-bottom: 40px;
+            padding-bottom: 35px;
+            border-bottom: 2px solid rgba(99, 102, 241, 0.06);
+            transition: var(--transition);
+        }
+
+        .policy-section:hover {
+            transform: translateX(5px);
+        }
+
+        .policy-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        h2 {
+            color: var(--primary-dark);
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            border-bottom: 3px solid transparent;
+            border-image: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+            border-image-slice: 1;
+            padding-bottom: 12px;
+        }
+
+        h2 i {
+            margin-right: 16px;
+            background: linear-gradient(145deg, rgba(99, 102, 241, 0.12), rgba(139, 92, 246, 0.12));
+            width: 48px;
+            height: 48px;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            transition: var(--transition);
+        }
+
+        .policy-section:hover h2 i {
+            background: linear-gradient(145deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            transform: rotate(-5deg);
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: var(--gray-dark);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            background: linear-gradient(145deg, rgba(6, 182, 212, 0.06), rgba(99, 102, 241, 0.06));
+            padding: 20px 25px;
+            border-radius: 20px;
+            margin: 25px 0;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            position: relative;
+        }
+
+        .highlight strong {
+            color: var(--accent-color);
+        }
+
+        .dream-badge {
+            display: inline-block;
+            background: linear-gradient(145deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .contact-box {
+            background: linear-gradient(145deg, #fff5f5, #fff);
+            padding: 45px 35px;
+            border-radius: 32px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 20px 35px rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-box::before {
+            content: '✨';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 120px;
+            opacity: 0.1;
+            transform: rotate(15deg);
+        }
+
+        .contact-box h2 {
+            justify-content: center;
+            border-bottom: none;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            margin-bottom: 30px;
+            font-size: 1.15rem;
+            color: var(--gray-dark);
+        }
+
+        .email-link {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(145deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            padding: 16px 32px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            gap: 12px;
+        }
+
+        .email-link:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(99, 102, 241, 0.4);
+            background: linear-gradient(145deg, var(--gradient-end), var(--gradient-start));
+        }
+
+        .email-link i {
+            font-size: 1.1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px 25px 25px;
+            color: var(--gray-medium);
+            font-size: 0.95rem;
+            border-top: 2px solid rgba(99, 102, 241, 0.06);
+            margin-top: 40px;
+        }
+
+        .policy-date {
+            display: inline-block;
+            background: linear-gradient(145deg, var(--light-color), white);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            color: var(--primary-dark);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            font-weight: 500;
+        }
+
+        .pill-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pill-list li {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.08);
+            padding: 8px 18px;
+            border-radius: 50px;
+            margin: 0 8px 10px 0;
+            font-size: 0.95rem;
+            color: var(--primary-dark);
+            border: 1px solid rgba(99, 102, 241, 0.1);
+            transition: var(--transition);
+        }
+
+        .pill-list li:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            header {
+                padding: 40px 25px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .content {
+                padding: 35px 25px;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            h2 i {
+                width: 42px;
+                height: 42px;
+                font-size: 1.1rem;
+            }
+            
+            .contact-box {
+                padding: 35px 25px;
+            }
+            
+            .email-link {
+                padding: 14px 28px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .logo-icon {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+            }
+            
+            h2 i {
+                width: 38px;
+                height: 38px;
+                margin-right: 12px;
+            }
+            
+            .pill-list li {
+                display: block;
+                text-align: center;
+                margin-right: 0;
+            }
+        }
+
+        .floating-dream {
+            position: absolute;
+            font-size: 20px;
+            color: rgba(255,255,255,0.2);
+            user-select: none;
+            pointer-events: none;
+            animation: float-around 20s infinite;
+        }
+
+        @keyframes float-around {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, -20px) rotate(5deg); }
+            50% { transform: translate(-15px, 15px) rotate(-5deg); }
+            75% { transform: translate(25px, 10px) rotate(8deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-moon logo-icon"></i>
+                <i class="fas fa-cloud-moon" style="font-size: 2.5rem; margin-left: -10px; opacity: 0.9;"></i>
+                <h1>Privacy Policy</h1>
+            </div>
+            <p class="subtitle">Your dreams are personal. Your privacy is absolute. Learn how OnirAI protects your data while helping you discover the meaning of your dreams.</p>
+            <span class="floating-dream" style="top: 20%; left: 10%;">🌙</span>
+            <span class="floating-dream" style="bottom: 15%; right: 15%; animation-delay: -5s;">✨</span>
+            <span class="floating-dream" style="top: 60%; left: 80%; animation-delay: -10s;">💭</span>
+        </header>
+        
+        <div class="content">
+            <div class="intro">
+                <p>🔮 At OnirAI, we believe that understanding your dreams should never come at the cost of your privacy. This policy outlines our commitment to protecting your data with transparency and respect. OnirAI is designed to be completely anonymous by default.</p>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-dream"></i> 1. What We Collect</h2>
+                <p>OnirAI does <strong>not collect any personally identifiable information</strong>. We do not ask for your name, email, phone number, or address. The only data processed is:</p>
+                <ul class="pill-list">
+                    <li>🔍 Words you search for in the dictionary</li>
+                    <li>🌐 Language preferences</li>
+                    <li>🎨 Theme preferences (light/dark mode)</li>
+                    <li>🤖 Anonymous AI interpretation queries</li>
+                </ul>
+                <p>All this information is stored <strong>locally on your device</strong>. We never have access to your search history or personal dream interpretations.</p>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-brain"></i> 2. Artificial Intelligence & Your Data</h2>
+                <p>When you request an AI-generated dream interpretation, your query is processed anonymously. We do not store your question, associate it with your identity, or use it to train models in a way that could identify you.</p>
+                <div class="highlight">
+                    <span class="dream-badge">✨ AI PRIVACY FIRST</span>
+                    <p><strong>Zero retention policy:</strong> Once your interpretation is delivered, the conversation is forgotten. No transcripts, no logs, no traces.</p>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-database"></i> 3. Local Storage Only</h2>
+                <p>Everything you do in OnirAI stays on your device:</p>
+                <ul class="pill-list">
+                    <li>📖 Your search history</li>
+                    <li>🔖 Saved words and favorites</li>
+                    <li>⚙️ App preferences</li>
+                    <li>📊 Recent searches</li>
+                </ul>
+                <p>We don't have servers collecting your data. You can delete all your local data at any time from the app settings, and it's gone forever.</p>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-ad"></i> 4. Advertising</h2>
+                <p>OnirAI uses Google Mobile Ads to remain free. These ads may use anonymous device identifiers to serve relevant advertisements. We do not share your search history or dream interpretations with advertisers. You can remove all ads by enabling Premium Mode.</p>
+                <div class="highlight">
+                    <p><strong>🔒 No behavioral targeting:</strong> Ads are not based on your dream searches or personal data.</p>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-lock"></i> 5. Permissions</h2>
+                <p>OnirAI requests minimal permissions:</p>
+                <ul class="pill-list">
+                    <li>📱 Internet access (for dictionary updates and ads)</li>
+                    <li>💾 Storage (to save your preferences locally)</li>
+                </ul>
+                <p>We do <strong>not</strong> request access to your microphone, camera, contacts, location, or files.</p>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-shield"></i> 6. Children's Privacy</h2>
+                <p>OnirAI is suitable for all ages. We do not knowingly collect any personal information from children. Since we don't collect data at all, there's no risk of child data being stored or misused.</p>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-file-alt"></i> 7. Changes to This Policy</h2>
+                <p>If we ever need to update this privacy policy, the changes will be reflected here and within the app. We will never retroactively change how we handle your data without your explicit consent.</p>
+            </div>
+            
+            <div class="contact-box">
+                <h2><i class="fas fa-star"></i> Dreaming together</h2>
+                <p>Have questions about your privacy? Want to know more about how OnirAI works? We're always happy to hear from you.</p>
+                <a href="mailto:privacy@onirai.com" class="email-link">
+                    <i class="fas fa-paper-plane"></i> privacy@onirai.com
+                </a>
+                <div style="margin-top: 25px;">
+                    <span class="policy-date" style="background: rgba(99,102,241,0.05);">
+                        <i class="fas fa-calendar-alt" style="margin-right: 6px;"></i> Last updated: February 2026
+                    </span>
+                </div>
+            </div>
+            
+            <footer>
+                <p>OnirAI <i class="fas fa-moon" style="color: var(--primary-color); margin: 0 4px;"></i> <span id="current-year"></span>. Made with 💜 for dreamers everywhere.</p>
+                <p style="font-size: 0.85rem; margin-top: 15px;">Dreams are personal. Privacy is a right, not a feature.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Smooth scroll animation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -30px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateX(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.policy-section').forEach((section, index) => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateX(-10px)';
+            section.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+            observer.observe(section);
+        });
+
+        // Add floating dream emojis dynamically
+        function createFloatingEmoji() {
+            const emojis = ['🌙', '✨', '💭', '⭐', '🌠', '🔮'];
+            const container = document.querySelector('header');
+            
+            for (let i = 0; i < 15; i++) {
+                const emoji = document.createElement('span');
+                emoji.className = 'floating-dream';
+                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.style.left = Math.random() * 100 + '%';
+                emoji.style.top = Math.random() * 100 + '%';
+                emoji.style.animationDelay = Math.random() * 15 + 's';
+                emoji.style.animationDuration = 15 + Math.random() * 15 + 's';
+                emoji.style.fontSize = 15 + Math.floor(Math.random() * 30) + 'px';
+                container.appendChild(emoji);
+            }
+        }
+
+        createFloatingEmoji();
+    </script>
+</body>
+</html>
